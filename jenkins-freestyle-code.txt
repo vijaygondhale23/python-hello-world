@@ -1,0 +1,30 @@
+Step 1:
+
+echo "Starting the python pipeline"
+python3 hello-world.py
+
+Step 2:
+
+echo "List the current/available docker images"
+docker images
+echo "Removing the my-python-app image"
+docker rmi -f my-python-app
+echo "Building the docker image"
+docker build -t my-python-app .
+echo "List the current/available docker images"
+docker images
+echo "Running the my-python-app container"
+docker run my-python-app
+echo "List all the contianer"
+docker ps -a
+
+Step 3:
+
+echo "Docker login"
+docker login -u mbarathtrainer -p password@123
+echo "Docker image Tagging"
+docker tag my-python-app mbarathtrainer/docker-private:v3.0
+echo "List the current/available docker images"
+docker images
+echo "Push the docker image into the dockerhub"
+docker push mbarathtrainer/docker-private:v3.0
