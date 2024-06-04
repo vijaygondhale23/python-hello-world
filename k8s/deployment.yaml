@@ -17,3 +17,5 @@ spec:
       containers:
       - name: python
         image: mbarathtrainer/docker-private:v3.0
+      imagePullSecrets:
+      - name: regcred
