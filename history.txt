@@ -1,0 +1,778 @@
+    1  # Add Docker's official GPG key:
+    2  sudo apt-get update
+    3  sudo apt-get install ca-certificates curl
+    4  sudo install -m 0755 -d /etc/apt/keyrings
+    5  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    6  sudo chmod a+r /etc/apt/keyrings/docker.asc
+    7  # Add the repository to Apt sources:
+    8  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    9    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   10  sudo apt-get update
+   11  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   12  docker version
+   13  sudo docker run hello-world
+   14  sudo docker imagesz
+   15  sudo docker images
+   16  sudo docker pull mysql
+   17  sudo docker i
+   18  sudo docker pull python
+   19  sudo docker run -it  mysql mysql -hsome.mysql.host -usome-mysql-user -p
+   20  sudo docker ps -a
+   21  sudo docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
+   22  sudo docker ps -a
+   23  sudo docker exec -it mysql-container
+   24  sudo docker exec -it mysql-container bash
+   25  id
+   26  sudo docker exec -it mysql-container mysql
+   27  sudo docker exec -it mysql-container bash
+   28  sudo docker exec -it mysql-container mysql -u root -p
+   29  sudo docker exec -it mysql-container-siddik mysql
+   30  sudo docker run --name mysql-container-siddik -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
+   31  sudo docker ps
+   32  sudo docker exec -it mysql-container-siddik mysql -u root -p
+   33  sudo docker images
+   34  sudo docker run python:latest
+   35  sudo docker ps
+   36  sudo docker ps -a
+   37  sudo docker images
+   38  sudo docker run nginix --name webserver
+   39  sudo docker run nginx --name webserver
+   40  docker run --name my-webserver-nginx-container -d nginx
+   41  sudo docker run --name my-webserver-nginx-container -d nginx
+   42  sudo docker ps
+   43  sudo docker pull openjdk
+   44  sudo docker images
+   45  sudo docker pull alpine
+   46  sudo docker images
+   47  sudo docker ps
+   48  sudo docker logs dfbb50d7aa2e
+   49  sudo docker ps -a
+   50  sudo docker logs 658ffca75199
+   51  sudo docker logs efcb6d03fe31
+   52  sudo docker container list
+   53  sudo docker container list -a
+   54  sudo docker describe dfbb50d7aa2e
+   55  sudo docker inspect dfbb50d7aa2e
+   56  sudo docker network
+   57  sudo docker network ls
+   58  sudo docker network create devops-network
+   59  sudo docker network ls
+   60  sudo docker network create --driver host devops-network-host 
+   61  sudo docker network create --driver overlay devops-network-overlay 
+   62  sudo docker network create --driver bridge devops-network-bridge 
+   63  sudo docker network ls
+   64  sudo docker network inspect 5984bc67c20b
+   65  sudo docker network connect bridge my-webserver-nginx-container
+   66  sudo docker network disconnect my-webserver-nginx-container
+   67  sudo docker network disconnect bridge my-webserver-nginx-container
+   68  sudo docker network inspect 5984bc67c20b
+   69  sudo docker network ls
+   70  sudo docker inspect a85c2863aa5e
+   71  sudo docker network connect devops-network-bridge my-webserver-nginx-container
+   72  sudo docker inspect a85c2863aa5e
+   73  sudo docker network list
+   74  sudo docker network rm b1dc21773949
+   75  sudo docker network list
+   76  history
+   77  docker push mbarathtrainer/docker-public:latest
+   78  sudo docker push mbarathtrainer/docker-public:latest
+   79  sudo docker pull mbarathtrainer/docker-public:latest
+   80  sudo docker images
+   81  sudo docker pull mbarathtrainer/docker-private:v3.0
+   82  sudo docker login -u mbarath87 -p password@123
+   83  sudo docker login -u mbarath87 -p Password@123
+   84  sudo docker login -u mbarath87
+   85  docker login  -u mbarathtrainer
+   86  sudo docker pull mbarathtrainer/docker-private:v3.0
+   87  sudo docker pull mbarathtrainer/docker-private:v2.0
+   88  sudo docker logout
+   89  docker login -u mbarathtrainer
+   90  sudo docker pull mbarathtrainer/docker-private:l
+   91  sudo docker pull mbarathtrainer/docker-private:v2.0
+   92  sudo docker login -u mbarath87 -p Deekshith@123
+   93  sudo docker login -u mbarath87trainer -p Deekshith@123
+   94  sudo docker login -u mbarathtrainer -p Deekshith@123
+   95  sudo docker login -u mbarathtrainer -p Password@123
+   96  sudo docker login -u mbarathtrainer -p password@123
+   97  clear
+   98  sudo docker images
+   99  sudo docker pull mbarathtrainer/docker-private:v3.0
+  100  sudo docker images
+  101  sudo docker rmi hello-world
+  102  sudo docker container list -a
+  103  sudo docker rmi hello-world -f
+  104  sudo docker container list -a
+  105  sudo docker images
+  106  sudo docker container rm 8ed52d378161
+  107  sudo docker container list -a
+  108  sudo docker run --name my-nignx-test -d -p 8080:80 nginx:latest
+  109  sudo docker container ls
+  110  sudo docker exec -it my-nginx-test bash
+  111  sudo docker exec -it my-nignx-test bash
+  112  history
+  113  sudo docker network ls
+  114  sudo docker inspect 5984bc67c20b
+  115  sudo docker ps -a
+  116  sudo docker ps
+  117  sudo docker ls
+  118  sudo docker images
+  119  sudo docker container stop f8c7edd75fe7
+  120  sudo docker ps -a
+  121  sudo docker ps
+  122  sudo docker container start f8c7edd75fe7
+  123  sudo docker ps
+  124  sudo docker volume ls
+  125  sudo docker volume create devops-vol1
+  126  sudo docker volume ls
+  127  sudo docker volume inspect 64e320be3893257ad83903f877c57f4531441a890df2a97b3fa1f8af7f248fed
+  128  sudo docker volume inspect 822f5a9f83b455bc7ac3e8bbe81d8c5d3e96cf6533e0bbec1dbb79a10606d732
+  129  sudo docker volume inspect a569119e00c93a7037b8f586d80968b5520e1797fba768f3669ef2726c1319a6
+  130  sudo docker volume ls
+  131  sudo docker volume rm devops-vol1
+  132  sudo docker volume ls
+  133  sudo docker volume create devops-vol1
+  134  sudo docker volume ls
+  135  sudo docker run -d --name my-docker-volume-demo -v devops-vol1:/data nginx:latest
+  136  sudo docker ps
+  137  sudo docker volume devops-vol1
+  138  sudo docker volume inspect devops-vol1
+  139  sudo docker run -d --name my-docker-volume-demo1 -v devops-vol1:/usr/share/nginx/html nginx:latest
+  140  sudo docker ps
+  141  sudo docker volume inspect devops-vol1
+  142  sudo docker exec -it my-docker-volume-demo1 bash
+  143  sudo docker volume ls
+  144  sudo docker ps
+  145  sudo docker run -d --name my-docker-volume-demo2 -v devops-vol1:/usr/share/nginx/html nginx:latest
+  146  sudo docker exec -it my-docker-volume-demo2 bash
+  147  history
+  148  pwd
+  149  mkdir docker
+  150  cd docker
+  151  ls
+  152  vim Dockerfile
+  153  sudo apt install vim
+  154  vim Dockerfile
+  155  ls
+  156  cat Dockerfile 
+  157  ls
+  158  mkdir html
+  159  cd html
+  160  echo "Hello from the Dockerfile" > index.html
+  161  ls
+  162  cd ..
+  163  ls
+  164  sudo docker images
+  165  sudo docker image rmi fffffc90d343
+  166  sudo docker rmi fffffc90d343
+  167  sudo docker container ls
+  168  sudo docker container ls -a
+  169  sudo docker container rm ee29828ac608
+  170  sudo docker container rm -f ee29828ac608
+  171  sudo docker container rm -f b017b5192647
+  172  sudo docker container rm -f 9500066f6669
+  173  sudo docker container rm -f f8c7edd75fe7
+  174  sudo docker container rm -f dfbb50d7aa2e
+  175  sudo docker container rm -f 658ffca75199
+  176  sudo docker container rm -f efcb6d03fe31
+  177  sudo docker container rm -f eab8d9cbf1a8
+  178  sudo docker container rm -f 483d7e326bfe
+  179  sudo docker images
+  180  sudo docker rmi fffffc90d343
+  181  sudo docker rmi 05247af91864
+  182  sudo docker images
+  183  sudo docker build -t my-webserver-nginx:v1.0 .
+  184  sudo docker images
+  185  sudo docker run --name my-custom-nignx-webserver -d -p 8080:80 my-webserver-nginx:v1.0
+  186  sudo docker ps
+  187  cat Dockerfile 
+  188  cat ./html/index.html 
+  189  mkdir
+  190  mkdir mysql
+  191  cd sql
+  192  cd mysql
+  193  ls
+  194  vim Dockerfile
+  195  cat Dockerfile 
+  196  vim Dockerfile 
+  197  sudo docker images
+  198  sudo docker ps
+  199  sudo docker build -t my-db-mysql:v1.0 .
+  200  history
+  201  sudo docker run --name my-db-container -d my-db-mysql:v1.0
+  202  sudo docker ps
+  203  sudo docker exec -it my-db-container mysql -u root -p
+  204  cat Dockerfile 
+  205  sudo docker exec -it my-db-container mysql -u devops -p
+  206  cd ..
+  207  vim Dockerfile 
+  208  cd html/
+  209  vim index.html 
+  210  cat index.html 
+  211  cd ..
+  212  cd mysql/
+  213  ls
+  214  vi Dockerfile 
+  215  history
+  216  cd ..
+  217  mkdir docker-compose
+  218  cd docker-compose/
+  219  ls
+  220  vim docker-compose.yml
+  221  ls
+  222  vim docker-compose.yml
+  223  cd ..
+  224  ls
+  225  cd docker
+  226  ls
+  227  cd ..
+  228  cd docker
+  229  cd ..
+  230  ls
+  231  cd docker-compose/
+  232  vim docker-compose.yml 
+  233  pwd
+  234  cd ..
+  235  cd docker
+  236  ls
+  237  vim Dockerfile 
+  238  cd ..
+  239  cd docker-compose/
+  240  mkdir nginx
+  241  vim Dockerfile
+  242  cd nginx/
+  243  vim Dockerfile
+  244  cd ..
+  245  cd docker/mysql/
+  246  cat Dockerfile 
+  247  pwd
+  248  cd /home/devops/docker-compose/
+  249  mkdir mysql
+  250  cd mysql/
+  251  vim Dockerfile
+  252  cd ..
+  253  vim docker-compose.yml 
+  254  sudo docker images
+  255  sudo docker --help
+  256  sudo docker stop $(docker ps -q)
+  257  sudo docker stop $(docker ps -a)
+  258  sudo docker stop $(sudo docker ps -a)
+  259  sudo docker ps -a
+  260  sudo docker stop $(sudo docker ps -aq)
+  261  sudo docker ps -a
+  262  sudo docker rm $(sudo docker ps -aq)
+  263  sudo docker ps -a
+  264  sudo docker rmi $(sudo docker images -q)
+  265  sudo docker images
+  266  sudo docker rmi $(sudo docker images)
+  267  sudo docker images
+  268  sudo docker volume rm $(sudo docker ls)
+  269  sudo docker volume rm $(sudo docker volume ls)
+  270  sudo docker volume ls
+  271  sudo docker network rm $(sudo docker network ls)
+  272  sudo docker networkls
+  273  sudo docker network ls
+  274  sudo docker nework prune -f
+  275  sudo docker network prune -f
+  276  sudo docker network ls
+  277  sudo docker-compose up --build -d
+  278  sudo docker compose up --build -d
+  279  ls
+  280  mkdir html
+  281  echo "Hello from the docker compose" > ./html/index.html
+  282  sudo docker compose up --build -d
+  283  ls
+  284  cd nginx/
+  285  mkdir html
+  286  echo "Hello from the docker compose" > ./html/index.html
+  287  cd ..
+  288  sudo docker compose up --build -d
+  289  sudo docker images
+  290  sudo docker ps
+  291  sudo docker volume ls
+  292  sudo docker network ls
+  293  sudo docker ps
+  294  vim docker-compose.yml 
+  295  ls -ltr
+  296  tree
+  297  sudo snap install tree
+  298  tree
+  299  vim docker-compose.yml 
+  300  history
+  301  sudo gpasswd -a $USER docker
+  302  docker version
+  303  docker images
+  304  kubectl exec nginx-deployment-86b6bb5dc7-4n7nf -it bash
+  305  kubectl get pods
+  306  kubectl get hpa nginx-hpa
+  307  kubectl get pods
+  308  kubectl get hpa nginx-hpa
+  309  kubectl describe hpa nginx-hpa
+  310  minikube addons enable metrics-server
+  311  kubectl describe hpa nginx-hpa
+  312  kubectl get hpa nginx-hpa
+  313  kubectl top pods
+  314  minikube restart
+  315  minikube stop
+  316  minikube start
+  317  kubectl top pods
+  318  kubectl apply -f https://raw.githubusercontent.com/pythianarora/total-practice/master/sample-kubernetes-code/metrics-server.yaml
+  319  kubectl top pods
+  320  kubectl exec -it nginx-deployment-86b6bb5dc7-7m6zv -- /bin/bash
+  321  kubectl exec -it nginx-deployment-86b6bb5dc7-4n7nf -- /bin/bash
+  322  docker ps
+  323  history
+  324  mkdir minikube
+  325  cd minikube/
+  326  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  327  ls
+  328  sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+  329  minikube start
+  330  kubectl get po -A
+  331  minikube kubectl -- get pods -A
+  332  kubectl get po -A
+  333  sudo snap install kubectl
+  334  sudo snap install kubectl --classic
+  335  kubectl get po -A
+  336  kubectl get pods
+  337  kubectl get pods -A
+  338  history
+  339  minikube status
+  340  kubectl cluster-info
+  341  kubectl get all
+  342  kubectl get pods
+  343  kubectl get pods -A
+  344  kubectl namespace create devops-lab
+  345  kubectl create namespace devops-lab
+  346  kubectl get namespace
+  347  kubectl --help
+  348  kubectl create --help
+  349  kubectl config current-context
+  350  kubectl get ns
+  351  kubectl config set-context --current --namespace=devops-lab
+  352  kubectl config current-context
+  353  history
+  354  kubectl run my-nginx-pod --image=nginx:latest --dry-run
+  355  kubectl run my-nginx-pod --image=nginx:latest --dry-run=client
+  356  kubectl run my-nginx-pod --image=nginx:latest
+  357  kubectl get pods
+  358  kubectl run my-nginx-pod --image=nginx:latest --dry-run=client -o yaml > pod.yaml
+  359  ls
+  360  ls -ltr
+  361  vim pod.yaml 
+  362  kubectl create pod my-nginx-pod1 --image=nginx:latest --dry-run=client -o yaml > pod1.yaml
+  363  kubectl create pod my-nginx-pod --image=nginx:latest --dry-run=client -o yaml > pod1.yaml
+  364  kubectl create pod my-nginx-pod --image=nginx:latest --dry-run=client
+  365  kubectl create pod my-nginx-pod --dry-run=client
+  366  kubectl create --name=pod my-nginx-pod1 --image=nginx:latest --dry-run=client -o yaml > pod1.yaml
+  367  kubectl get pod
+  368  kubectl delete pod my-nginx-pod
+  369  kubectl get pod
+  370  ls
+  371  vim pod1.yaml
+  372  kubectl apply -f pod.yaml
+  373  kubectl get pod
+  374  kubectl describe pod my-nginx-pod
+  375  kubectl create deployment my-nginx-deployment --image=nginx:latest --dry-run=client
+  376  kubectl create deployment my-nginx-deployment --image=nginx:latest
+  377  kubectl get pod
+  378  kubectl get deployment
+  379  kubectl delete pod my-nginx-deployment-6c6fcf6f8d-8ggb4
+  380  kubectl get pod
+  381  kubectl delete deployment my-nginx-deployment
+  382  kubectl get pod
+  383  kubectl create deployment my-nginx-deployment --image=nginx:latest -o yaml > deployment.yaml
+  384  ls
+  385  kubectl get deployment
+  386  kubectl get pod
+  387  kubectl delete deployment deployment.yaml 
+  388  kubectl delete deployment my-nginx-deployment
+  389  kubectl get deployment
+  390  kubectl config current-context
+  391  kubectl get pod
+  392  ls
+  393  kubectl apply -f deployment.yaml 
+  394  kubectl get deployment
+  395  kubectl get pod
+  396  vim deployment.yaml 
+  397  kubectl apply -f deployment.yaml 
+  398  kubectl get deployment
+  399  kubectl delete deployment my-nginx-deployment
+  400  kubectl get deployment
+  401  kubectl apply -f deployment.yaml 
+  402  kubectl get deployment
+  403  kubectl get pod
+  404  kubectl delete pod my-nginx-deployment-6c6fcf6f8d-nwt25
+  405  kubectl get pod
+  406  kubectl describe deployment my-nginx-deployment
+  407  history
+  408  vim deployment.yaml 
+  409  cat deployment.yaml 
+  410  kubectl get deployment
+  411  kubectl rollout deployment/my-nginx-deployment
+  412  kubectl apply -f deployment.yaml 
+  413  kubectl delete deployment my-nginx-deployment
+  414  kubectl apply -f deployment.yaml 
+  415  kubectl get deployment.yaml 
+  416  kubectl get deployment
+  417  kubectl get pod
+  418  kubectl rollout status
+  419  kubectl rollout status deployment/my-nginx-deployment
+  420  kubectl get replicaset
+  421  vim deployment.yaml 
+  422  vim replicateset.yaml
+  423  kubectl get replicaset
+  424  kubectl apply -f replicateset.yaml 
+  425  kubectl get pod
+  426  kubectl get deployment
+  427  kubectl get rs
+  428  kubectl delete pod my-nginx-replicaset-rvxc8
+  429  kubectl get pod
+  430  kubectl get services
+  431  vim lb-services.yaml
+  432  vim pod-demo.yaml
+  433  kubectl apply -f pod-demo.yaml 
+  434  kubectl get pod
+  435  vim pod-demo.yaml
+  436  kubectl apply -f pod-demo.yaml 
+  437  kubectl get pod
+  438  kubectl logs pod nginx
+  439  kubectl logs nginx
+  440  kubectl logs --help
+  441  kubectl logs my-nginx-deployment-6c6fcf6f8d-md6l6
+  442  vim lb-services.yaml
+  443  kubectl apply lb-services.yaml 
+  444  kubectl apply -f lb-services.yaml 
+  445  kubectl get pod
+  446  kubectl get service
+  447  vim lb-services.yaml
+  448  kubectl get pod
+  449  kubectl get service
+  450  kubectl delete pod nginx-service-demo
+  451  kubectl delete service nginx-service-demo
+  452  kubectl apply -f lb-services.yaml 
+  453  vim lb-services.yaml
+  454  kubectl delete pod nginx-service-demo
+  455  kubectl apply -f lb-services.yaml 
+  456  kubectl get po
+  457  kubectl get services
+  458  kubectl describe service nginx-service-demo
+  459  vim lb-services.yaml
+  460  vim hpa.yaml
+  461  vim nginx-deployment.yaml
+  462  vim nginx-deployment.yaml 
+  463  kubectl apply -f nginx-deployment.yaml 
+  464  kubectl get deployment
+  465  kubectl get pod
+  466  vim nginx-service.yaml
+  467  kubectl get services
+  468  kubectl apply -f nginx-service.yaml 
+  469  kubectl get services
+  470  vim nginx-hpa.yaml
+  471  kubectl apply -f nginx-hpa.yaml 
+  472  kubectl get hpa
+  473  kubectl describe hpa nginx-hpa
+  474  kubectl get hpa
+  475  kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- sh
+  476  kubectl get hpa nginx-hpa
+  477  kubectl get hpa
+  478  history
+  479  kubectl config set-context --current --namespace=devops-lab
+  480  kubectl get hpa
+  481  kubectl get pod
+  482  kubectl get hpa
+  483  kubectl get pod
+  484  kubectl get hpa
+  485  kubectl get pod
+  486  kubectl get hpa
+  487  kubectl get pod
+  488  kubectl get hpa
+  489  kubectl get pod
+  490  kubectl get hpa
+  491  vim nginx-hpa
+  492  vim nginx-hpa.yaml 
+  493  kubectl get hpa
+  494  ls
+  495  vim lb-services.yaml 
+  496  vim nginx-deployment.yaml 
+  497  vim nginx-service.yaml 
+  498  vim nginx-hpa.yaml 
+  499  history
+  500  kubectl get hpa
+  501  kubectl delete hpa nginx-hpa
+  502  kubectl get deployment
+  503  kubectl get pod
+  504  vim nginx-hpa.yaml 
+  505  kubectl apply -f nginx-hpa.yaml 
+  506  kubectl get hpa
+  507  kubectl get pod
+  508  kubectl get hpa
+  509  vim nginx-hpa.yaml 
+  510  kubectl get hpa
+  511  kubectl create secret generic devops-secret
+  512  kubectl get secret devops-secret
+  513  vim secret.yaml
+  514  kubectl apply -f secret.yaml 
+  515  kubectl get secret devops-secret
+  516  kubectl get secret
+  517  kubectl get pod
+  518  echo -n 'admin' | base64
+  519  echo -n '1f2d1e2e67df' | base64
+  520  vim secret.yaml 
+  521  kubectl apply secret.yaml 
+  522  kubectl apply -f secret.yaml 
+  523  vim secret.yaml 
+  524  kubectl create secret generic my-secret-cli --from-literal=username=admin --from-literal=password=password@123
+  525  vim secret-demo.yaml
+  526  vim secret-demo-volume.yaml
+  527  kubectl apply -f secret-demo-volume.yaml 
+  528  kubectl get pod
+  529  vim secret-demo-volume.yaml
+  530  kubectl get pod
+  531  vim secret-demo-volume.yaml
+  532  kubectl get pod
+  533  kubectl create configmap my-config --from-literal=environment=production --from-literal=log_level=info
+  534  kubectl get configmap
+  535  vim configmap.yaml
+  536  kubectl apply -f configmap.yaml 
+  537  kubectl get configmap
+  538  vim configmap.yaml
+  539  kubectl apply -f configmap.yaml 
+  540  vim configmap-pod.yaml
+  541  kubectl apply -f configmap-pod.yaml 
+  542  kubectl get pod
+  543  ls -ltr
+  544  history
+  545  add-apt-repository ppa:git-core/ppa # apt update; apt install git
+  546  sudo add-apt-repository ppa:git-core/ppa # apt update; apt install git
+  547  git version
+  548  https://github.com/Bharath-Devops-2705/python-hello-world.git
+  549  git clone https://github.com/Bharath-Devops-2705/python-hello-world.git
+  550  ls
+  551  cd python-hello-world/
+  552  ls
+  553  pwd
+  554  cd ..
+  555  ls
+  556  cd python-hello-world/
+  557  cp /home/devops/minikube/*.yaml .
+  558  ls
+  559  cd ..
+  560  rm -R python-hello-world/
+  561  y
+  562  ls
+  563  git clone https://github.com/Bharath-Devops-2705/python-hello-world.git
+  564  cd python-hello-world/
+  565  ls
+  566  mkdir k8s-manifest
+  567  cd k8s-manifest/
+  568  cp /home/devops/minikube/*.yaml .
+  569  ls
+  570  cd ..
+  571  ls
+  572  git branch
+  573  git staus
+  574  git status
+  575  git add .
+  576  git commit -m "added k8s manifest files"
+  577  git config --global user.email "mbarathtrainer@gmail.com"
+  578  git config --global user.name "Barath Mohan"
+  579  git commit -m "added k8s manifest files"
+  580  git status
+  581  git push
+  582  kubectl get all -A
+  583  kubectl get resources --all-namespaces
+  584  kubectl get all
+  585  kubectl get namespaces --all
+  586  kubectl get namespaces
+  587  kubectl get all -A
+  588  cd ..
+  589  ls
+  590  vim nginx-hpa.yaml 
+  591  mkdir helm
+  592  cd helm
+  593  curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+  594  sudo apt-get install apt-transport-https --yes
+  595  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+  596  sudo apt-get update
+  597  sudo apt-get install helm
+  598  helm version
+  599  helm --help
+  600  helm repo list
+  601  helm list
+  602  helm history
+  603  helm status
+  604  helm repo add bitnami https://charts.bitnami.com/bitnami
+  605  helm repo list
+  606  helm repo update
+  607  helm pull bitnami/nginx
+  608  ls
+  609  tar -zxvf nginx-*.tgz
+  610  tree
+  611  ls
+  612  cd nginx/
+  613  ls
+  614  cd templates/
+  615  vim deployment.yaml 
+  616  ls
+  617  cd..
+  618  cd ..
+  619  ls
+  620  vim values.
+  621  vim values.yaml
+  622  history
+  623  helm install nginx-helm-demo bitnami/nginx
+  624  kubectl get pod
+  625  vim values.yaml 
+  626  helm install nginx-helm-demo .
+  627  helm list
+  628  helm status nginx-helm-demo
+  629  helm show 
+  630  helm show all
+  631  helm show nginx-helm-demo
+  632  helm show chart bitnami/nginx
+  633  helm upgrade nginx-helm-demo .
+  634  helm list nginx-helm-demo
+  635  helm list
+  636  helm history nginx-helm-demo
+  637  kubectl get pod
+  638  helm rollback nginx-helm-demo 1
+  639  helm history nginx-helm-demo
+  640  vim values.yaml
+  641  helm history nginx-helm-demo
+  642  helm install nginx-helm-demo .
+  643  helm install/upgrade nginx-helm-demo .
+  644  helm upgrade nginx-helm-demo .
+  645  kubectl get pod
+  646  helm history nginx-helm-demo
+  647  helm uninstall nginx-helm-demo
+  648  helm history nginx-helm-demo
+  649  kubectl get pod
+  650  ls -ltr
+  651  vim Chart.yaml 
+  652  vim values.yaml 
+  653  cd templates/
+  654  ls
+  655  vim deployment.yaml 
+  656  history
+  657  sudo apt-get install jenkins
+  658  pub   rsa4096 2023-03-27 [SC] [expires: 2026-03-26]
+  659  uid                      Jenkins Project 
+  660  sub   rsa4096 2023-03-27 [E] [expires: 2026-03-26]
+  661  java version
+  662  sudo apt update
+  663  sudo apt install fontconfig openjdk-17-jre
+  664  java -version
+  665  sudo wget -O /usr/share/keyrings/jenkins-keyring.asc   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+  666  echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]"   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
+  667  sudo apt-get update
+  668  sudo apt-get install jenkins
+  669  sudo systemctl status jenkins
+  670  sudo systemctl enable jenkins
+  671  sudo systemctl start jenkins
+  672  sudo systemctl status jenkins
+  673  sudo systemctl start jenkins
+  674  systemctl status jenkins.service
+  675  systemctl status jenkins
+  676  cat /var/lib/jenkins/secrets/initialAdminPassword
+  677  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+  678  ls /var/lib/jenkins
+  679  sudo /etc/init.d/jenkins restart
+  680  history
+  681  helm repo install
+  682  kubectl get pod
+  683  minikube status
+  684  minikube start
+  685  minikube status
+  686  history
+  687  kubectl config set-context --current --namespace=devops-lab
+  688  kubectl get pod
+  689  helm install my-nginx bitnami/nginx --set replicacount=3
+  690  kubectl get pod
+  691  helm install my-nginx-set-demo bitnami/nginx --set replicacount=3
+  692  kubectl get pod
+  693  helm install my-nginx-set-demo1 bitnami/nginx --set replicaCount=3
+  694  kubectl get pod
+  695  java -jar jenkins-cli.jar -s http://localhost:8080/ list-plugins
+  696  ls
+  697  cd Downloads/
+  698  ls
+  699  java -jar jenkins-cli.jar -s http://localhost:8080/ list-plugins
+  700  curl -s http://your-jenkins-server/pluginManager/api/json?depth=1 | jq '.plugins[] | {shortName, version, active}'
+  701  ls
+  702  curl -s http://localhost:8080/pluginManager/api/json?depth=1 | jq '.plugins[] | {shortName, version, active}'
+  703  [200~java -jar jenkins-cli.jar -s http://localhost:8080/ list-plugins git
+  704  java -jar jenkins-cli.jar -s http://localhost:8080/ list-plugins git
+  705  java -jar jenkins-cli.jar -s http://localhost:8080/ -auth admin:1178942ae5b2c14354d3aa68d677326bf8 list-plugins
+  706  java -jar jenkins-cli.jar -s http://localhost:8080/ -auth admin:1178942ae5b2c14354d3aa68d677326bf8 list-plugins > jenkins-plugins.txt
+  707  ls
+  708  cd ..
+  709  ls 
+  710  cd ls
+  711  ls
+  712  pwd
+  713  ls minikube/
+  714  cd Downloads/
+  715  ls
+  716  cp *.txt /home/devops/minikube/python-hello-world/
+  717  cd /home/devops/minikube/python-hello-world/
+  718  ls
+  719  git status
+  720  git add .
+  721  git commit -m "added Jenkins-plugins.txt"
+  722  git push
+  723  git pull
+  724  git branch
+  725  git branch -a
+  726  git fetch
+  727  git pull origin/master
+  728  git pull
+  729  git config pull.rebase true
+  730  git pull
+  731  git push
+  732  docker images
+  733  sudo usermod -a -G docker jenkins
+  734  sudo usermod 777 /var/run/docker.sock
+  735  history
+  736  sudo /etc/init.d/jenkins restart
+  737  ls /home/devops/
+  738  cat C:\ProgramData\Jenkins\.jenkins.
+  739  cat ~/.jenkins.
+  740  find jenkins
+  741  find /home/devopsjenkins
+  742  sudo systemctl stop jenkins
+  743  sudo systemctl edit jenkins
+  744  sudo systemctl start jenkins
+  745  set JENKINS_HOME='/home/
+'
+  746  sudo systemctl stop jenkins
+  747  sudo systemctl start jenkins
+  748  set JENKINS_HOME='/home/'
+  749  echo $HOME
+  750  set $HOME='/var/lib/jenkins'
+  751  echo $HOME
+  752  sudo systemctl start jenkins
+  753  sudo systemctl stop jenkins
+  754  sudo systemctl start jenkins
+  755  set $HOME='/home/devops'
+  756  echo $HOME
+  757  printenv
+  758  printenv | grep jenkins
+  759  printenv | grep JENKINS
+  760  sudo su
+  761  cat /etc/default/jenkins
+  762  sudo systemctl stop jenkins
+  763  sudo systemctl start jenkins
+  764  ls
+  765  vim README.md 
+  766  git status
+  767  git add .
+  768  git commit -m "Modified - Readme file"
+  769  git push
+  770  git pull
+  771  git push
+  772  vim README.md 
+  773  git status
+  774  git add .
+  775  git commit -m "modified readme file"
+  776  git push
+  777  history > history.txt
