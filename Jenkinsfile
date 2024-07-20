@@ -19,7 +19,7 @@ pipeline {
 		echo "List the current/available docker images"
 		sh 'docker images'
 		echo "Running the my-python-app container"
-		sh 'docker run my-python-app -d'
+		sh 'docker run -d my-python-app'
 		echo "List all the contianer"
 		sh 'docker ps -a'
             }
