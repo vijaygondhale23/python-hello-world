@@ -8,7 +8,7 @@ pipeline {
  		sh 'python3 hello-world.py'
             }
         }
-        stage('Test') {
+        stage('Docker Build') {
             steps {
                 echo "List the current/available docker images"
 		sh 'docker images'
