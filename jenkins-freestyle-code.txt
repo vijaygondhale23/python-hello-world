@@ -21,7 +21,7 @@ docker ps -a
 Step 3:
 
 echo "Docker login"
-docker login -u mbarathtrainer -p 
+docker login -u mbarathtrainer -p password@123
 echo "Docker image Tagging"
 docker tag my-python-app mbarathtrainer/docker-private:v3.0
 echo "List the current/available docker images"
